@@ -20,6 +20,7 @@ namespace Masny.DotNet.TransactionSystem.PaymentService
             Host.CreateDefaultBuilder(args)
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
+                    webBuilder.UseUrls("https://*:58526");
                     webBuilder.UseStartup<Startup>();
                 });
     }
