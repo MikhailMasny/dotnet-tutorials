@@ -1,3 +1,4 @@
+using Masny.DataTransfer.ClientService.Helpers;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
@@ -13,6 +14,7 @@ namespace Masny.DataTransfer.ClientService
     {
         public static void Main(string[] args)
         {
+            ApplicationConfig.GenerateDate = Convert.ToBoolean(args[1]);
             CreateHostBuilder(args).Build().Run();
         }
 
@@ -20,6 +22,7 @@ namespace Masny.DataTransfer.ClientService
             Host.CreateDefaultBuilder(args)
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
+                    webBuilder.UseUrls($"https://*:{args[0]}");
                     webBuilder.UseStartup<Startup>();
                 });
     }

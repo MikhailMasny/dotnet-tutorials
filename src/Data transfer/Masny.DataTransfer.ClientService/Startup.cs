@@ -1,3 +1,6 @@
+using Masny.DataTransfer.ClientService.Helpers;
+using Masny.DataTransfer.ClientService.Interfaces;
+using Masny.DataTransfer.ClientService.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -25,6 +28,9 @@ namespace Masny.DataTransfer.ClientService
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddTransient<IRequestService, RequestService>();
+            services.AddSingleton<IFakeBankService, FakeBankService>();
+            services.AddOptions<Ports>().Bind(Configuration.GetSection("Ports"));
             services.AddControllers();
         }
 
