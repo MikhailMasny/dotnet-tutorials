@@ -5,9 +5,15 @@ VisualStudioVersion = 16.0.30907.101
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Transaction system", "Transaction system", "{3744CCB8-C7EB-488B-B5E2-26AF459EB87D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Masny.DotNet.TransactionSystem.PaymentService", "src\Transaction system\Masny.DotNet.TransactionSystem.PaymentService\Masny.DotNet.TransactionSystem.PaymentService.csproj", "{D784DCA2-1087-4120-ADA4-EA787D6C1ACD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Masny.DotNet.TransactionSystem.PaymentService", "src\Transaction system\Masny.DotNet.TransactionSystem.PaymentService\Masny.DotNet.TransactionSystem.PaymentService.csproj", "{D784DCA2-1087-4120-ADA4-EA787D6C1ACD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Masny.DotNet.TransactionSystem.WebApi", "src\Transaction system\Masny.DotNet.TransactionSystem.WebApi\Masny.DotNet.TransactionSystem.WebApi.csproj", "{6305523C-1880-449A-BB35-230C0C8911FF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Masny.DotNet.TransactionSystem.WebApi", "src\Transaction system\Masny.DotNet.TransactionSystem.WebApi\Masny.DotNet.TransactionSystem.WebApi.csproj", "{6305523C-1880-449A-BB35-230C0C8911FF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data transfer", "Data transfer", "{2A67B25E-9BF7-4EDD-87DB-94BFC3A4E50C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Masny.DataTransfer.UserService", "src\Data transfer\Masny.DataTransfer.UserService\Masny.DataTransfer.UserService.csproj", "{5559646E-F30A-491E-9F93-6452449AD690}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Masny.DataTransfer.ClientService", "src\Data transfer\Masny.DataTransfer.ClientService\Masny.DataTransfer.ClientService.csproj", "{24524677-55A2-4961-BDA4-9931E80C4B98}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,6 +29,14 @@ Global
 		{6305523C-1880-449A-BB35-230C0C8911FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6305523C-1880-449A-BB35-230C0C8911FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6305523C-1880-449A-BB35-230C0C8911FF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5559646E-F30A-491E-9F93-6452449AD690}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5559646E-F30A-491E-9F93-6452449AD690}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5559646E-F30A-491E-9F93-6452449AD690}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5559646E-F30A-491E-9F93-6452449AD690}.Release|Any CPU.Build.0 = Release|Any CPU
+		{24524677-55A2-4961-BDA4-9931E80C4B98}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{24524677-55A2-4961-BDA4-9931E80C4B98}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{24524677-55A2-4961-BDA4-9931E80C4B98}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{24524677-55A2-4961-BDA4-9931E80C4B98}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -30,6 +44,8 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{D784DCA2-1087-4120-ADA4-EA787D6C1ACD} = {3744CCB8-C7EB-488B-B5E2-26AF459EB87D}
 		{6305523C-1880-449A-BB35-230C0C8911FF} = {3744CCB8-C7EB-488B-B5E2-26AF459EB87D}
+		{5559646E-F30A-491E-9F93-6452449AD690} = {2A67B25E-9BF7-4EDD-87DB-94BFC3A4E50C}
+		{24524677-55A2-4961-BDA4-9931E80C4B98} = {2A67B25E-9BF7-4EDD-87DB-94BFC3A4E50C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {1F0C3DD0-332C-49F9-B38C-F76CCB973AE2}
