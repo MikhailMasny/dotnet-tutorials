@@ -1,11 +1,8 @@
-﻿using Masny.Auth.Web.Models;
+﻿using Masny.Auth.Web.ViewModels;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace Masny.Auth.Web.Controllers
 {
@@ -18,12 +15,26 @@ namespace Masny.Auth.Web.Controllers
             _logger = logger;
         }
 
+        //[AllowAnonymous]
         public IActionResult Index()
         {
             return View();
         }
 
+        [Authorize]
         public IActionResult Privacy()
+        {
+            return View();
+        }
+
+        [Authorize(Roles = "Admin")]
+        public IActionResult Secret()
+        {
+            return View();
+        }
+
+        [Authorize(Policy = "TMS")]
+        public IActionResult SuperSecret()
         {
             return View();
         }

@@ -1,6 +1,6 @@
 using System;
 
-namespace Masny.Auth.Web.Models
+namespace Masny.Auth.Web.ViewModels
 {
     public class ErrorViewModel
     {
