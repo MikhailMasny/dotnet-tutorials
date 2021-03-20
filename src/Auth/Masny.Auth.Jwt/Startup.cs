@@ -1,5 +1,6 @@
 using Masny.Auth.Jwt.Helpers;
 using Masny.Auth.Jwt.Interfaces;
+using Masny.Auth.Jwt.Managers;
 using Masny.Auth.Jwt.Middlewares;
 using Masny.Auth.Jwt.Services;
 using Microsoft.AspNetCore.Builder;
@@ -27,6 +28,7 @@ namespace Masny.Auth.Jwt
             services.Configure<AppSetting>(Configuration.GetSection("AppSetting"));
 
             services.AddScoped<IUserService, UserService>();
+            services.AddSingleton<IUserStoreManager, UserStoreManager>();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

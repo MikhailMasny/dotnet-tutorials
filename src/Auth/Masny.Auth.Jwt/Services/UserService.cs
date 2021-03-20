@@ -16,42 +16,70 @@ namespace Masny.Auth.Jwt.Services
 {
     public class UserService : IUserService
     {
-        private List<User> _users = new List<User>
-        {
-            new User
-            {
-                Id = 1,
-                FirstName = "Test",
-                LastName = "User",
-                Username = "test",
-                Password = "test"
-            }
-        };
-
         private readonly AppSetting _appSetting;
+        private readonly IUserStoreManager _userStoreManager;
 
-        public UserService(IOptions<AppSetting> appSettings)
+        public UserService(
+            IOptions<AppSetting> appSettings,
+            IUserStoreManager userStoreManager)
         {
             _appSetting = appSettings.Value;
+            _userStoreManager = userStoreManager ?? throw new ArgumentNullException(nameof(userStoreManager));
         }
 
-        public AuthenticateResponse Authenticate(AuthenticateRequest model)
+        public AuthenticationResult Create(UserSignUpRequest model)
         {
-            var user = _users.SingleOrDefault(x => x.Username == model.Username && x.Password == model.Password);
+            var lastUserId =
+                _userStoreManager
+                .GetAll()
+                .LastOrDefault().Id;
+
+            _userStoreManager.Add(new User
+            {
+                Id = ++lastUserId,
+                FirstName = model.FirstName,
+                LastName = model.LastName,
+                Username = Guid.NewGuid().ToString(),
+                Password = model.Password,
+            });
+
+            return new AuthenticationResult
+            {
+                Result = true,
+                Message = "User created successfully",
+            };
+        }
+
+        public AuthenticationResult Authenticate(UserSignInRequest model)
+        {
+            var user =
+                _userStoreManager
+                .GetAll()
+                .SingleOrDefault(x => x.Username == model.Username && x.Password == model.Password);
 
             return user is null
-                ? null
-                : new AuthenticateResponse(user, GenerateJwtToken(user));
+                ? new AuthenticationResult
+                {
+                    Message = "Username or password is incorrect",
+                }
+                : new AuthenticationResult
+                {
+                    Result = true,
+                    Message = "User is successfully authenticated",
+                    Data = new AuthenticateResponse(user, GenerateJwtToken(user))
+                };
         }
 
         public IEnumerable<User> GetAll()
         {
-            return _users;
+            return _userStoreManager.GetAll();
         }
 
         public User GetById(int id)
         {
-            return _users.FirstOrDefault(x => x.Id == id);
+            return _userStoreManager
+                .GetAll()
+                .FirstOrDefault(u => u.Id == id);
         }
 
         private string GenerateJwtToken(User user)

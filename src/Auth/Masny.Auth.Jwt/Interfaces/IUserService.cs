@@ -1,5 +1,4 @@
 ﻿using Masny.Auth.Jwt.Contracts.Requests;
-using Masny.Auth.Jwt.Contracts.Responses;
 using Masny.Auth.Jwt.Models;
 using System.Collections.Generic;
 
@@ -7,7 +6,9 @@ namespace Masny.Auth.Jwt.Interfaces
 {
     public interface IUserService
     {
-        AuthenticateResponse Authenticate(AuthenticateRequest model);
+        AuthenticationResult Authenticate(UserSignInRequest model);
+
+        AuthenticationResult Create(UserSignUpRequest model);
 
         IEnumerable<User> GetAll();
 

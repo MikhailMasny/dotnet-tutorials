@@ -2,6 +2,7 @@
 using Masny.Auth.Jwt.Helpers;
 using Masny.Auth.Jwt.Interfaces;
 using Microsoft.AspNetCore.Mvc;
+using System;
 
 namespace Masny.Auth.Jwt.Controllers
 {
@@ -13,20 +14,29 @@ namespace Masny.Auth.Jwt.Controllers
 
         public UsersController(IUserService userService)
         {
-            _userService = userService;
+            _userService = userService ?? throw new ArgumentNullException(nameof(userService));
         }
 
-        [HttpPost("authenticate")]
-        public IActionResult Authenticate(AuthenticateRequest model)
+        [HttpPost("signup")]
+        public IActionResult SignUp(UserSignUpRequest model)
         {
-            var response = _userService.Authenticate(model);
+            var authenticationResult = _userService.Create(model);
 
-            return response is null 
-                ? BadRequest(new { message = "Username or password is incorrect" }) 
-                : Ok(response);
+            return !authenticationResult.Result
+                ? BadRequest(new { message = authenticationResult.Message })
+                : NoContent();
         }
 
-        [Authorize]
+        [HttpPost("signin")]
+        public IActionResult SignIn(UserSignInRequest model)
+        {
+            var authenticationResult = _userService.Authenticate(model);
+
+            return !authenticationResult.Result
+                ? BadRequest(new { message = authenticationResult.Message })
+                : Ok(authenticationResult.Data);
+        }
+
         [HttpGet]
         public IActionResult GetAll()
         {
