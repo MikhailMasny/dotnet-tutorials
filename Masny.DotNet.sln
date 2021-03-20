@@ -17,7 +17,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Masny.DataTransfer.ClientSe
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Auth", "Auth", "{47287B25-A353-4B33-8E5F-FBB5619288B0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Masny.Auth.Web", "src\Auth\Masny.Auth.Web\Masny.Auth.Web.csproj", "{7309DE37-1529-407B-A90B-F5A63A9C4A99}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Masny.Auth.Web", "src\Auth\Masny.Auth.Web\Masny.Auth.Web.csproj", "{7309DE37-1529-407B-A90B-F5A63A9C4A99}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Masny.Auth.Jwt", "src\Auth\Masny.Auth.Jwt\Masny.Auth.Jwt.csproj", "{377C04A3-5C87-44D1-BAC5-4A53F6DA7968}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{7309DE37-1529-407B-A90B-F5A63A9C4A99}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7309DE37-1529-407B-A90B-F5A63A9C4A99}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7309DE37-1529-407B-A90B-F5A63A9C4A99}.Release|Any CPU.Build.0 = Release|Any CPU
+		{377C04A3-5C87-44D1-BAC5-4A53F6DA7968}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{377C04A3-5C87-44D1-BAC5-4A53F6DA7968}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{377C04A3-5C87-44D1-BAC5-4A53F6DA7968}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{377C04A3-5C87-44D1-BAC5-4A53F6DA7968}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -55,6 +61,7 @@ Global
 		{5559646E-F30A-491E-9F93-6452449AD690} = {2A67B25E-9BF7-4EDD-87DB-94BFC3A4E50C}
 		{24524677-55A2-4961-BDA4-9931E80C4B98} = {2A67B25E-9BF7-4EDD-87DB-94BFC3A4E50C}
 		{7309DE37-1529-407B-A90B-F5A63A9C4A99} = {47287B25-A353-4B33-8E5F-FBB5619288B0}
+		{377C04A3-5C87-44D1-BAC5-4A53F6DA7968} = {47287B25-A353-4B33-8E5F-FBB5619288B0}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {1F0C3DD0-332C-49F9-B38C-F76CCB973AE2}
