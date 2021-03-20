@@ -1,17 +1,18 @@
 ﻿using Masny.Auth.Jwt.Contracts.Requests;
 using Masny.Auth.Jwt.Models;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace Masny.Auth.Jwt.Interfaces
 {
     public interface IUserService
     {
-        AuthenticationResult Authenticate(UserSignInRequest model);
+        Task<AuthenticationResult> AuthenticateAsync(UserSignInRequest model);
 
-        AuthenticationResult Create(UserSignUpRequest model);
+        Task<AuthenticationResult> CreateAsync(UserSignUpRequest model);
 
-        IEnumerable<User> GetAll();
+        Task<IEnumerable<User>> GetAllAsync();
 
-        User GetById(int id);
+        Task<User> GetByIdAsync(int id);
     }
 }

@@ -1,12 +1,13 @@
 ﻿using Masny.Auth.Jwt.Models;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace Masny.Auth.Jwt.Interfaces
 {
     public interface IUserStoreManager
     {
-        IEnumerable<User> GetAll();
+        Task<IList<User>> GetAllAsync();
 
-        void Add(User user);
+        Task AddAsync(User user);
     }
 }

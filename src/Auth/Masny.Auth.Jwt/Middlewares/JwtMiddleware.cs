@@ -28,13 +28,13 @@ namespace Masny.Auth.Jwt.Middlewares
 
             if (token is not null)
             {
-                attachUserToContext(context, userService, token);
+                await AttachUserToContextAsync(context, userService, token);
             }
 
             await _next(context);
         }
 
-        private void attachUserToContext(HttpContext context, IUserService userService, string token)
+        private async Task AttachUserToContextAsync(HttpContext context, IUserService userService, string token)
         {
             try
             {
@@ -54,7 +54,7 @@ namespace Masny.Auth.Jwt.Middlewares
                 var jwtToken = (JwtSecurityToken)validatedToken;
                 var userId = int.Parse(jwtToken.Claims.First(x => x.Type == "id").Value);
 
-                context.Items["User"] = userService.GetById(userId);
+                context.Items["User"] = await userService.GetByIdAsync(userId);
             }
             catch
             {

@@ -2,12 +2,13 @@
 using Masny.Auth.Jwt.Models;
 using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace Masny.Auth.Jwt.Managers
 {
     public class UserStoreManager : IUserStoreManager
     {
-        private List<User> _users = new List<User>
+        private IList<User> _users = new List<User>
         {
             new User
             {
@@ -19,14 +20,15 @@ namespace Masny.Auth.Jwt.Managers
             }
         };
 
-        public void Add(User user)
+        public Task AddAsync(User user)
         {
             _users.Add(user);
+            return Task.CompletedTask;
         }
 
-        public IEnumerable<User> GetAll()
+        public Task<IList<User>> GetAllAsync()
         {
-            return _users;
+            return Task.FromResult(_users);
         }
     }
 }

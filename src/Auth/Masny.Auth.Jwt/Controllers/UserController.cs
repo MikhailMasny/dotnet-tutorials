@@ -1,8 +1,8 @@
 ﻿using Masny.Auth.Jwt.Contracts.Requests;
-using Masny.Auth.Jwt.Helpers;
 using Masny.Auth.Jwt.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using System;
+using System.Threading.Tasks;
 
 namespace Masny.Auth.Jwt.Controllers
 {
@@ -18,9 +18,9 @@ namespace Masny.Auth.Jwt.Controllers
         }
 
         [HttpPost("signup")]
-        public IActionResult SignUp(UserSignUpRequest model)
+        public async Task<IActionResult> SignUpAsync(UserSignUpRequest model)
         {
-            var authenticationResult = _userService.Create(model);
+            var authenticationResult = await _userService.CreateAsync(model);
 
             return !authenticationResult.Result
                 ? BadRequest(new { message = authenticationResult.Message })
@@ -28,9 +28,9 @@ namespace Masny.Auth.Jwt.Controllers
         }
 
         [HttpPost("signin")]
-        public IActionResult SignIn(UserSignInRequest model)
+        public async Task<IActionResult> SignInAsync(UserSignInRequest model)
         {
-            var authenticationResult = _userService.Authenticate(model);
+            var authenticationResult = await _userService.AuthenticateAsync(model);
 
             return !authenticationResult.Result
                 ? BadRequest(new { message = authenticationResult.Message })
@@ -38,9 +38,9 @@ namespace Masny.Auth.Jwt.Controllers
         }
 
         [HttpGet]
-        public IActionResult GetAll()
+        public async Task<IActionResult> GetAllAsync()
         {
-            var users = _userService.GetAll();
+            var users = await _userService.GetAllAsync();
             return Ok(users);
         }
     }

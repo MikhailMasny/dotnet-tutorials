@@ -11,6 +11,7 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
 using System.Security.Claims;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace Masny.Auth.Jwt.Services
 {
@@ -27,14 +28,12 @@ namespace Masny.Auth.Jwt.Services
             _userStoreManager = userStoreManager ?? throw new ArgumentNullException(nameof(userStoreManager));
         }
 
-        public AuthenticationResult Create(UserSignUpRequest model)
+        public async Task<AuthenticationResult> CreateAsync(UserSignUpRequest model)
         {
-            var lastUserId =
-                _userStoreManager
-                .GetAll()
+            var lastUserId = (await _userStoreManager.GetAllAsync())
                 .LastOrDefault().Id;
 
-            _userStoreManager.Add(new User
+            await _userStoreManager.AddAsync(new User
             {
                 Id = ++lastUserId,
                 FirstName = model.FirstName,
@@ -50,11 +49,9 @@ namespace Masny.Auth.Jwt.Services
             };
         }
 
-        public AuthenticationResult Authenticate(UserSignInRequest model)
+        public async Task<AuthenticationResult> AuthenticateAsync(UserSignInRequest model)
         {
-            var user =
-                _userStoreManager
-                .GetAll()
+            var user = (await _userStoreManager.GetAllAsync())
                 .SingleOrDefault(x => x.Username == model.Username && x.Password == model.Password);
 
             return user is null
@@ -70,15 +67,14 @@ namespace Masny.Auth.Jwt.Services
                 };
         }
 
-        public IEnumerable<User> GetAll()
+        public async Task<IEnumerable<User>> GetAllAsync()
         {
-            return _userStoreManager.GetAll();
+            return await _userStoreManager.GetAllAsync();
         }
 
-        public User GetById(int id)
+        public async Task<User> GetByIdAsync(int id)
         {
-            return _userStoreManager
-                .GetAll()
+            return (await _userStoreManager.GetAllAsync())
                 .FirstOrDefault(u => u.Id == id);
         }
 
