@@ -45,7 +45,7 @@ namespace Masny.Auth.Jwt.Controllers
             return Ok(users);
         }
 
-        //[Authorize(Roles = "ROLE_ADMIN")]
+        [Authorize(Roles = "ROLE_ADMIN")]
         [HttpGet("admin")]
         public IActionResult Admin()
         {

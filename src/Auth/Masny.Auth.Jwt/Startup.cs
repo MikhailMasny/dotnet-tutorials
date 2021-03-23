@@ -1,13 +1,15 @@
 using Masny.Auth.Jwt.Helpers;
 using Masny.Auth.Jwt.Interfaces;
 using Masny.Auth.Jwt.Managers;
-using Masny.Auth.Jwt.Middlewares;
 using Masny.Auth.Jwt.Services;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
 
 namespace Masny.Auth.Jwt
 {
@@ -22,13 +24,45 @@ namespace Masny.Auth.Jwt
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddCors();
-            services.AddControllers();
-
-            services.Configure<AppSetting>(Configuration.GetSection("AppSetting"));
-
+            // Managers & Services
             services.AddScoped<IUserService, UserService>();
             services.AddSingleton<IUserStoreManager, UserStoreManager>();
+
+            // Microsoft services
+            services.AddControllers();
+            services.AddCors();
+
+            // Auth
+            var jwtSection = Configuration.GetSection(nameof(AppSetting));
+            services.Configure<AppSetting>(jwtSection);
+
+            var jwtSettings = jwtSection.Get<AppSetting>();
+            var jwtSecretKey = Encoding.ASCII.GetBytes(jwtSettings.Secret);
+
+            var tokenValidationParametrs = new TokenValidationParameters
+            {
+                ValidateIssuerSigningKey = true,
+                IssuerSigningKey = new SymmetricSecurityKey(jwtSecretKey),
+                ValidateIssuer = false,
+                ValidateAudience = false,
+                RequireExpirationTime = false,
+                ValidateLifetime = true
+            };
+
+            services.AddSingleton(tokenValidationParametrs);
+
+            services.AddAuthentication(x =>
+            {
+                x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                x.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
+                x.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+            })
+            .AddJwtBearer(x =>
+            {
+                x.RequireHttpsMetadata = false;
+                x.SaveToken = true;
+                x.TokenValidationParameters = tokenValidationParametrs;
+            });
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -45,7 +79,8 @@ namespace Masny.Auth.Jwt
                 .AllowAnyMethod()
                 .AllowAnyHeader());
 
-            app.UseMiddleware<JwtMiddleware>();
+            app.UseAuthentication();
+            app.UseAuthorization();
 
             app.UseEndpoints(x => x.MapControllers());
         }
