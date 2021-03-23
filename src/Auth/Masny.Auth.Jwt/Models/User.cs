@@ -1,4 +1,5 @@
-﻿using System.Text.Json.Serialization;
+﻿using System.Collections.Generic;
+using System.Text.Json.Serialization;
 
 namespace Masny.Auth.Jwt.Models
 {
@@ -10,7 +11,11 @@ namespace Masny.Auth.Jwt.Models
 
         public string LastName { get; set; }
 
+        public string Email { get; set; }
+
         public string Username { get; set; }
+
+        public IEnumerable<string> Roles { get; set; }
 
         [JsonIgnore]
         public string Password { get; set; }

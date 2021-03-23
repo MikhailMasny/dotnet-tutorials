@@ -1,5 +1,6 @@
 ﻿using Masny.Auth.Jwt.Contracts.Requests;
 using Masny.Auth.Jwt.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Threading.Tasks;
@@ -37,11 +38,18 @@ namespace Masny.Auth.Jwt.Controllers
                 : Ok(authenticationResult.Data);
         }
 
-        [HttpGet]
+        [HttpGet("all")]
         public async Task<IActionResult> GetAllAsync()
         {
             var users = await _userService.GetAllAsync();
             return Ok(users);
+        }
+
+        //[Authorize(Roles = "ROLE_ADMIN")]
+        [HttpGet("admin")]
+        public IActionResult Admin()
+        {
+            return Content("Secret message!");
         }
     }
 }

@@ -13,11 +13,42 @@ namespace Masny.Auth.Jwt.Managers
             new User
             {
                 Id = 1,
-                FirstName = "Test",
-                LastName = "User",
+                FirstName = "Admin",
+                LastName = "Test",
+                Email = "admin@admin.admin",
                 Username = Guid.NewGuid().ToString(),
-                Password = "test"
-            }
+                Password = "admin123",
+                Roles = new List<string>
+                {
+                    "ROLE_ADMIN",
+                },
+            },
+            new User
+            {
+                Id = 2,
+                FirstName = "Moderator",
+                LastName = "Test",
+                Email = "moderator@moderator.moderator",
+                Username = Guid.NewGuid().ToString(),
+                Password = "moderator123",
+                Roles = new List<string>
+                {
+                    "ROLE_MODERATOR",
+                },
+            },
+            new User
+            {
+                Id = 3,
+                FirstName = "User",
+                LastName = "Test",
+                Email = "user@user.user",
+                Username = Guid.NewGuid().ToString(),
+                Password = "user123",
+                Roles = new List<string>
+                {
+                    "ROLE_USER",
+                },
+            },
         };
 
         public Task AddAsync(User user)

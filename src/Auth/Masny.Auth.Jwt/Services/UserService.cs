@@ -38,6 +38,7 @@ namespace Masny.Auth.Jwt.Services
                 Id = ++lastUserId,
                 FirstName = model.FirstName,
                 LastName = model.LastName,
+                Email = model.Email,
                 Username = Guid.NewGuid().ToString(),
                 Password = model.Password,
             });
@@ -82,9 +83,19 @@ namespace Masny.Auth.Jwt.Services
         {
             var tokenHandler = new JwtSecurityTokenHandler();
             var key = Encoding.ASCII.GetBytes(_appSetting.Secret);
+
+            var claims = new List<Claim>
+            {
+                new Claim("id", user.Id.ToString()),
+            };
+            foreach (var role in user.Roles)
+            {
+                claims.Add(new Claim(ClaimTypes.Role, role));
+            }
+
             var tokenDescriptor = new SecurityTokenDescriptor
             {
-                Subject = new ClaimsIdentity(new[] { new Claim("id", user.Id.ToString()) }),
+                Subject = new ClaimsIdentity(claims),
                 Expires = DateTime.UtcNow.AddDays(7),
                 SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
             };
