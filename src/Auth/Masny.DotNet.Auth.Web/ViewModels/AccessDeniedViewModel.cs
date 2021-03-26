@@ -1,4 +1,4 @@
-﻿namespace Masny.Auth.Web.ViewModels
+﻿namespace Masny.DotNet.Auth.Web.ViewModels
 {
     public class AccessDeniedViewModel
     {

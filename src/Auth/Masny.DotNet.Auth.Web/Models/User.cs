@@ -1,4 +1,4 @@
-﻿namespace Masny.Auth.Web.Models
+﻿namespace Masny.DotNet.Auth.Web.Models
 {
     public class User
     {

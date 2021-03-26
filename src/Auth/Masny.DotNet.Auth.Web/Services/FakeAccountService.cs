@@ -1,7 +1,7 @@
-﻿using Masny.Auth.Web.Models;
+﻿using Masny.DotNet.Auth.Web.Models;
 using System.Collections.Generic;
 
-namespace Masny.Auth.Web.Services
+namespace Masny.DotNet.Auth.Web.Services
 {
     public class FakeAccountService
     {

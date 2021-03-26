@@ -1,10 +1,10 @@
-﻿using Masny.Auth.Web.ViewModels;
+﻿using Masny.DotNet.Auth.Web.ViewModels;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System.Diagnostics;
 
-namespace Masny.Auth.Web.Controllers
+namespace Masny.DotNet.Auth.Web.Controllers
 {
     public class HomeController : Controller
     {

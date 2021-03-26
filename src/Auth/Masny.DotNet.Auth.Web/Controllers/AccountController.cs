@@ -1,6 +1,6 @@
-﻿using Masny.Auth.Web.Models;
-using Masny.Auth.Web.Services;
-using Masny.Auth.Web.ViewModels;
+﻿using Masny.DotNet.Auth.Web.Models;
+using Masny.DotNet.Auth.Web.Services;
+using Masny.DotNet.Auth.Web.ViewModels;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Mvc;
@@ -9,7 +9,7 @@ using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
 
-namespace Masny.Auth.Web.Controllers
+namespace Masny.DotNet.Auth.Web.Controllers
 {
     public class AccountController : Controller
     {
