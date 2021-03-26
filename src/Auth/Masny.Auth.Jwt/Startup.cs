@@ -72,6 +72,8 @@ namespace Masny.Auth.Jwt
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseHttpsRedirection();
+
             app.UseRouting();
 
             app.UseCors(x => x
