@@ -1,8 +1,8 @@
-﻿using Masny.Auth.Jwt.Contracts.Requests;
-using Masny.Auth.Jwt.Contracts.Responses;
-using Masny.Auth.Jwt.Helpers;
-using Masny.Auth.Jwt.Interfaces;
-using Masny.Auth.Jwt.Models;
+﻿using Masny.DotNet.Auth.Jwt.Contracts.Requests;
+using Masny.DotNet.Auth.Jwt.Contracts.Responses;
+using Masny.DotNet.Auth.Jwt.Helpers;
+using Masny.DotNet.Auth.Jwt.Interfaces;
+using Masny.DotNet.Auth.Jwt.Models;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using System;
@@ -13,7 +13,7 @@ using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Masny.Auth.Jwt.Services
+namespace Masny.DotNet.Auth.Jwt.Services
 {
     public class UserService : IUserService
     {

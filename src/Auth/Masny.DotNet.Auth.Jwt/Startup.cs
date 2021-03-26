@@ -1,7 +1,7 @@
-using Masny.Auth.Jwt.Helpers;
-using Masny.Auth.Jwt.Interfaces;
-using Masny.Auth.Jwt.Managers;
-using Masny.Auth.Jwt.Services;
+using Masny.DotNet.Auth.Jwt.Helpers;
+using Masny.DotNet.Auth.Jwt.Interfaces;
+using Masny.DotNet.Auth.Jwt.Managers;
+using Masny.DotNet.Auth.Jwt.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -11,7 +11,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 
-namespace Masny.Auth.Jwt
+namespace Masny.DotNet.Auth.Jwt
 {
     public class Startup
     {

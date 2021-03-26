@@ -1,4 +1,4 @@
-﻿namespace Masny.Auth.Jwt.Helpers
+﻿namespace Masny.DotNet.Auth.Jwt.Helpers
 {
     public class AppSetting
     {

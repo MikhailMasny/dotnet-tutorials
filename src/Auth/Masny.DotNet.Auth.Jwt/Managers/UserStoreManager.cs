@@ -1,10 +1,10 @@
-﻿using Masny.Auth.Jwt.Interfaces;
-using Masny.Auth.Jwt.Models;
+﻿using Masny.DotNet.Auth.Jwt.Interfaces;
+using Masny.DotNet.Auth.Jwt.Models;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace Masny.Auth.Jwt.Managers
+namespace Masny.DotNet.Auth.Jwt.Managers
 {
     public class UserStoreManager : IUserStoreManager
     {

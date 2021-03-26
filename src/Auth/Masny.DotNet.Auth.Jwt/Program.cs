@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
 
-namespace Masny.Auth.Jwt
+namespace Masny.DotNet.Auth.Jwt
 {
     public class Program
     {

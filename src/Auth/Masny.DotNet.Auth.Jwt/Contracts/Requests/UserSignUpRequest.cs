@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Masny.Auth.Jwt.Contracts.Requests
+namespace Masny.DotNet.Auth.Jwt.Contracts.Requests
 {
     public class UserSignUpRequest
     {

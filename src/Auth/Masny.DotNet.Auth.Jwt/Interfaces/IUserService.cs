@@ -1,9 +1,9 @@
-﻿using Masny.Auth.Jwt.Contracts.Requests;
-using Masny.Auth.Jwt.Models;
+﻿using Masny.DotNet.Auth.Jwt.Contracts.Requests;
+using Masny.DotNet.Auth.Jwt.Models;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace Masny.Auth.Jwt.Interfaces
+namespace Masny.DotNet.Auth.Jwt.Interfaces
 {
     public interface IUserService
     {

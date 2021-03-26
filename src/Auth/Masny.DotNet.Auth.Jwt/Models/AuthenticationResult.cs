@@ -1,6 +1,6 @@
-﻿using Masny.Auth.Jwt.Contracts.Responses;
+﻿using Masny.DotNet.Auth.Jwt.Contracts.Responses;
 
-namespace Masny.Auth.Jwt.Models
+namespace Masny.DotNet.Auth.Jwt.Models
 {
     public class AuthenticationResult
     {

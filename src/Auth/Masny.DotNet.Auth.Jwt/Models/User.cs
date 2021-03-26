@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Text.Json.Serialization;
 
-namespace Masny.Auth.Jwt.Models
+namespace Masny.DotNet.Auth.Jwt.Models
 {
     public class User
     {

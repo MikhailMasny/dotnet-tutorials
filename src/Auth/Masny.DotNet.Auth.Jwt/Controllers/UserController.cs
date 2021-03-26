@@ -1,11 +1,11 @@
-﻿using Masny.Auth.Jwt.Contracts.Requests;
-using Masny.Auth.Jwt.Interfaces;
+﻿using Masny.DotNet.Auth.Jwt.Contracts.Requests;
+using Masny.DotNet.Auth.Jwt.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Threading.Tasks;
 
-namespace Masny.Auth.Jwt.Controllers
+namespace Masny.DotNet.Auth.Jwt.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]

@@ -1,7 +1,7 @@
-﻿using Masny.Auth.Jwt.Models;
+﻿using Masny.DotNet.Auth.Jwt.Models;
 using System.Collections.Generic;
 
-namespace Masny.Auth.Jwt.Contracts.Responses
+namespace Masny.DotNet.Auth.Jwt.Contracts.Responses
 {
     public class AuthenticateResponse
     {
