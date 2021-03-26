@@ -1,7 +1,7 @@
-﻿using Masny.DataTransfer.ClientService.Contracts.Request;
-using Masny.DataTransfer.ClientService.Contracts.Response;
-using Masny.DataTransfer.ClientService.Helpers;
-using Masny.DataTransfer.ClientService.Interfaces;
+﻿using Masny.DotNet.DataTransfer.ClientService.Contracts.Request;
+using Masny.DotNet.DataTransfer.ClientService.Contracts.Response;
+using Masny.DotNet.DataTransfer.ClientService.Helpers;
+using Masny.DotNet.DataTransfer.ClientService.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
 using System;
@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
-namespace Masny.DataTransfer.ClientService.Controllers
+namespace Masny.DotNet.DataTransfer.ClientService.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]

@@ -17,7 +17,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "Masny.DataTransfer.ClientService": {
+    "Masny.DotNet.DataTransfer.ClientService": {
       "commandName": "Project",
       "commandLineArgs": "54581 true",
       "launchBrowser": true,

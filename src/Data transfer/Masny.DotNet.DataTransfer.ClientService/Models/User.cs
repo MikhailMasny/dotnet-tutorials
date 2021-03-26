@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using static Bogus.DataSets.Name;
 
-namespace Masny.DataTransfer.ClientService.Models
+namespace Masny.DotNet.DataTransfer.ClientService.Models
 {
     public class User
     {

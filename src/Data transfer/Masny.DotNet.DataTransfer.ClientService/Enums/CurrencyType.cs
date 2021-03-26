@@ -1,4 +1,4 @@
-﻿namespace Masny.DataTransfer.ClientService.Enums
+﻿namespace Masny.DotNet.DataTransfer.ClientService.Enums
 {
     public enum CurrencyType
     {

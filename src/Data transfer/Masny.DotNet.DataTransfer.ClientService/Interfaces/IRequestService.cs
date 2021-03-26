@@ -1,8 +1,8 @@
-﻿using Masny.DataTransfer.ClientService.Contracts.Response;
+﻿using Masny.DotNet.DataTransfer.ClientService.Contracts.Response;
 using System;
 using System.Threading.Tasks;
 
-namespace Masny.DataTransfer.ClientService.Interfaces
+namespace Masny.DotNet.DataTransfer.ClientService.Interfaces
 {
     public interface IRequestService
     {

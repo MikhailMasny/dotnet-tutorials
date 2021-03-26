@@ -1,13 +1,13 @@
 ﻿using Bogus;
-using Masny.DataTransfer.ClientService.Enums;
-using Masny.DataTransfer.ClientService.Helpers;
-using Masny.DataTransfer.ClientService.Interfaces;
-using Masny.DataTransfer.ClientService.Models;
+using Masny.DotNet.DataTransfer.ClientService.Enums;
+using Masny.DotNet.DataTransfer.ClientService.Helpers;
+using Masny.DotNet.DataTransfer.ClientService.Interfaces;
+using Masny.DotNet.DataTransfer.ClientService.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Masny.DataTransfer.ClientService.Services
+namespace Masny.DotNet.DataTransfer.ClientService.Services
 {
     public class FakeBankService : IFakeBankService
     {

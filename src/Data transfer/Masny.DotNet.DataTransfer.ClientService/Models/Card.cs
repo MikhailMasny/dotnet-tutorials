@@ -1,7 +1,7 @@
-﻿using Masny.DataTransfer.ClientService.Enums;
+﻿using Masny.DotNet.DataTransfer.ClientService.Enums;
 using System;
 
-namespace Masny.DataTransfer.ClientService.Models
+namespace Masny.DotNet.DataTransfer.ClientService.Models
 {
     public class Card
     {

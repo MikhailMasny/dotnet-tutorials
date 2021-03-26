@@ -1,10 +1,10 @@
-﻿using Masny.DataTransfer.ClientService.Models;
+﻿using Masny.DotNet.DataTransfer.ClientService.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Masny.DataTransfer.ClientService.Contracts.Response
+namespace Masny.DotNet.DataTransfer.ClientService.Contracts.Response
 {
     public class TransferResponse
     {

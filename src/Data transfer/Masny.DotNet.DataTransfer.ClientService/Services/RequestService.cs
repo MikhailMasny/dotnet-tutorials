@@ -1,11 +1,11 @@
 ﻿using Flurl;
 using Flurl.Http;
-using Masny.DataTransfer.ClientService.Contracts.Response;
-using Masny.DataTransfer.ClientService.Interfaces;
+using Masny.DotNet.DataTransfer.ClientService.Contracts.Response;
+using Masny.DotNet.DataTransfer.ClientService.Interfaces;
 using System;
 using System.Threading.Tasks;
 
-namespace Masny.DataTransfer.ClientService.Services
+namespace Masny.DotNet.DataTransfer.ClientService.Services
 {
     public class RequestService : IRequestService
     {

@@ -1,4 +1,4 @@
-using Masny.DataTransfer.ClientService.Helpers;
+using Masny.DotNet.DataTransfer.ClientService.Helpers;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
@@ -8,7 +8,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Masny.DataTransfer.ClientService
+namespace Masny.DotNet.DataTransfer.ClientService
 {
     public class Program
     {

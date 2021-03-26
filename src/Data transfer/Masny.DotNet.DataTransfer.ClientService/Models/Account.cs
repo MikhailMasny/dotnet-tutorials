@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Masny.DataTransfer.ClientService.Models
+namespace Masny.DotNet.DataTransfer.ClientService.Models
 {
     public class Account
     {
