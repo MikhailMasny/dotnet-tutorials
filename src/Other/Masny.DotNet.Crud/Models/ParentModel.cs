@@ -8,7 +8,6 @@ namespace Masny.DotNet.Crud.Models
 
         public string StringVar { get; set; }
 
-
         /// <summary>
         /// Navigation to ChildModels.
         /// </summary>

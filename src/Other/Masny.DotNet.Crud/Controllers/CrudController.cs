@@ -33,31 +33,74 @@ namespace Masny.DotNet.Crud.Controllers
             return Ok(parentModels);
         }
 
-
-
-        // GET api/<CrudController>/5
         [HttpGet("{id}")]
-        public string Get(int id)
+        public async Task<IActionResult> Get(int id)
         {
-            return "value";
+            var parentModel =
+                await _parentRepositoryManager
+                    .GetAll()
+                    .Include(parentModel => parentModel.ChildModels)
+                    .FirstOrDefaultAsync(parentModel => parentModel.Id == id);
+
+            return parentModel is null
+                ? NotFound()
+                : Ok(parentModel);
         }
 
-        // POST api/<CrudController>
         [HttpPost]
-        public void Post([FromBody] string value)
+        public async Task<IActionResult> Post([FromBody] ParentRequest model)
         {
+            var parentModel = new ParentModel
+            {
+                StringVar = model.StringVar,
+            };
+
+            await _parentRepositoryManager.CreateAsync(parentModel);
+            await _parentRepositoryManager.SaveChangesAsync();
+
+            return Ok();
         }
 
-        // PUT api/<CrudController>/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        public async Task<IActionResult> Put(int id, [FromBody] ParentRequest model)
         {
+            var parentModel =
+                await _parentRepositoryManager
+                    .GetEntityWithoutTrackingAsync(parentModel => parentModel.Id == id);
+
+            if (parentModel is null)
+            {
+                return NotFound();
+            }
+
+            parentModel.StringVar = model.StringVar;
+            _parentRepositoryManager.Update(parentModel);
+            await _parentRepositoryManager.SaveChangesAsync();
+
+            return Ok();
         }
 
-        // DELETE api/<CrudController>/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public async Task<IActionResult> DeleteAsync(int id)
         {
+            var parentModel =
+                await _parentRepositoryManager
+                    .GetEntityWithoutTrackingAsync(parentModel => parentModel.Id == id);
+
+            if (parentModel is null)
+            {
+                return NotFound();
+            }
+
+            _parentRepositoryManager.Delete(parentModel);
+            await _parentRepositoryManager.SaveChangesAsync();
+
+            return NoContent();
         }
+    }
+
+    public class ParentRequest
+    {
+        public string StringVar { get; set; }
     }
 }
