@@ -1,7 +1,7 @@
-﻿using Masny.DataTransfer.UserService.Models;
+﻿using Masny.DotNet.DataTransfer.UserService.Models;
 using System.Collections.Generic;
 
-namespace Masny.DataTransfer.UserService.Interfaces
+namespace Masny.DotNet.DataTransfer.UserService.Interfaces
 {
     public interface IFakeUserService
     {

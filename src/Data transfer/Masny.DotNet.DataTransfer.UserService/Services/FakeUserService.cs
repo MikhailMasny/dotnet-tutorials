@@ -1,11 +1,11 @@
 ﻿using Bogus;
-using Masny.DataTransfer.UserService.Interfaces;
-using Masny.DataTransfer.UserService.Models;
+using Masny.DotNet.DataTransfer.UserService.Interfaces;
+using Masny.DotNet.DataTransfer.UserService.Models;
 using System;
 using System.Collections.Generic;
 using static Bogus.DataSets.Name;
 
-namespace Masny.DataTransfer.UserService.Services
+namespace Masny.DotNet.DataTransfer.UserService.Services
 {
     public class FakeUserService : IFakeUserService
     {

@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
 
-namespace Masny.DataTransfer.UserService
+namespace Masny.DotNet.DataTransfer.UserService
 {
     public class Program
     {

@@ -11,8 +11,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Masny.DotNet.TransactionSys
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data transfer", "Data transfer", "{2A67B25E-9BF7-4EDD-87DB-94BFC3A4E50C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Masny.DataTransfer.UserService", "src\Data transfer\Masny.DataTransfer.UserService\Masny.DataTransfer.UserService.csproj", "{5559646E-F30A-491E-9F93-6452449AD690}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Auth", "Auth", "{47287B25-A353-4B33-8E5F-FBB5619288B0}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Other", "Other", "{9E392882-6367-47CC-ACE9-F9DCCF9519BD}"
@@ -24,6 +22,8 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Masny.DotNet.Auth.Web", "src\Auth\Masny.DotNet.Auth.Web\Masny.DotNet.Auth.Web.csproj", "{6D7A5EAE-7D3E-47CC-A146-E1143B82319F}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Masny.DotNet.DataTransfer.ClientService", "src\Data transfer\Masny.DotNet.DataTransfer.ClientService\Masny.DotNet.DataTransfer.ClientService.csproj", "{F073D142-E3B2-4898-BB18-2B03FF624FC2}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Masny.DotNet.DataTransfer.UserService", "src\Data transfer\Masny.DotNet.DataTransfer.UserService\Masny.DotNet.DataTransfer.UserService.csproj", "{215E14F2-C7D9-4C2F-9C59-A98ABAAD2364}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,10 +39,6 @@ Global
 		{6305523C-1880-449A-BB35-230C0C8911FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6305523C-1880-449A-BB35-230C0C8911FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6305523C-1880-449A-BB35-230C0C8911FF}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5559646E-F30A-491E-9F93-6452449AD690}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5559646E-F30A-491E-9F93-6452449AD690}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5559646E-F30A-491E-9F93-6452449AD690}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5559646E-F30A-491E-9F93-6452449AD690}.Release|Any CPU.Build.0 = Release|Any CPU
 		{6024B015-26B5-4255-9EC0-79215488C394}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{6024B015-26B5-4255-9EC0-79215488C394}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6024B015-26B5-4255-9EC0-79215488C394}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -59,6 +55,10 @@ Global
 		{F073D142-E3B2-4898-BB18-2B03FF624FC2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F073D142-E3B2-4898-BB18-2B03FF624FC2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F073D142-E3B2-4898-BB18-2B03FF624FC2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{215E14F2-C7D9-4C2F-9C59-A98ABAAD2364}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{215E14F2-C7D9-4C2F-9C59-A98ABAAD2364}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{215E14F2-C7D9-4C2F-9C59-A98ABAAD2364}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{215E14F2-C7D9-4C2F-9C59-A98ABAAD2364}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -66,11 +66,11 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{D784DCA2-1087-4120-ADA4-EA787D6C1ACD} = {3744CCB8-C7EB-488B-B5E2-26AF459EB87D}
 		{6305523C-1880-449A-BB35-230C0C8911FF} = {3744CCB8-C7EB-488B-B5E2-26AF459EB87D}
-		{5559646E-F30A-491E-9F93-6452449AD690} = {2A67B25E-9BF7-4EDD-87DB-94BFC3A4E50C}
 		{6024B015-26B5-4255-9EC0-79215488C394} = {9E392882-6367-47CC-ACE9-F9DCCF9519BD}
 		{5D55632B-BFCB-4221-B0AE-ED20EA10C42F} = {47287B25-A353-4B33-8E5F-FBB5619288B0}
 		{6D7A5EAE-7D3E-47CC-A146-E1143B82319F} = {47287B25-A353-4B33-8E5F-FBB5619288B0}
 		{F073D142-E3B2-4898-BB18-2B03FF624FC2} = {2A67B25E-9BF7-4EDD-87DB-94BFC3A4E50C}
+		{215E14F2-C7D9-4C2F-9C59-A98ABAAD2364} = {2A67B25E-9BF7-4EDD-87DB-94BFC3A4E50C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {1F0C3DD0-332C-49F9-B38C-F76CCB973AE2}

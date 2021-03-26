@@ -1,10 +1,10 @@
-﻿using Masny.DataTransfer.UserService.Contracts.Response;
-using Masny.DataTransfer.UserService.Interfaces;
+﻿using Masny.DotNet.DataTransfer.UserService.Contracts.Response;
+using Masny.DotNet.DataTransfer.UserService.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Linq;
 
-namespace Masny.DataTransfer.UserService.Controllers
+namespace Masny.DotNet.DataTransfer.UserService.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]

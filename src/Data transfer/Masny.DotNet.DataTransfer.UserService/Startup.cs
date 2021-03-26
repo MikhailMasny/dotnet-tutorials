@@ -1,12 +1,12 @@
-using Masny.DataTransfer.UserService.Interfaces;
-using Masny.DataTransfer.UserService.Services;
+using Masny.DotNet.DataTransfer.UserService.Interfaces;
+using Masny.DotNet.DataTransfer.UserService.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
-namespace Masny.DataTransfer.UserService
+namespace Masny.DotNet.DataTransfer.UserService
 {
     public class Startup
     {

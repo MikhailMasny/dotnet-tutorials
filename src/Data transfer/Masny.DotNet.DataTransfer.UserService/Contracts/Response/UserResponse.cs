@@ -1,6 +1,6 @@
-﻿using Masny.DataTransfer.UserService.Models;
+﻿using Masny.DotNet.DataTransfer.UserService.Models;
 
-namespace Masny.DataTransfer.UserService.Contracts.Response
+namespace Masny.DotNet.DataTransfer.UserService.Contracts.Response
 {
     public class UserResponse
     {

@@ -1,7 +1,7 @@
 ﻿using System;
 using static Bogus.DataSets.Name;
 
-namespace Masny.DataTransfer.UserService.Models
+namespace Masny.DotNet.DataTransfer.UserService.Models
 {
     public class User
     {
